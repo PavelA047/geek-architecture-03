@@ -7,7 +7,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 
-public class SocketService implements Closeable {
+public class SocketService implements ServerSocketService {
 
     private final Socket socket;
 
@@ -21,7 +21,7 @@ public class SocketService implements Closeable {
                     new InputStreamReader(
                             socket.getInputStream(), StandardCharsets.UTF_8));
 
-            while (!input.ready());
+            while (!input.ready()) ;
 
             Deque<String> response = new LinkedList<>();
             while (input.ready()) {
