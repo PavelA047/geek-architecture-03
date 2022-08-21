@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class FileService {
+public class FileService implements ServerFileService {
 
     private final String rootDir;
 
